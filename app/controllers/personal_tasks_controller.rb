@@ -10,17 +10,6 @@ class PersonalTasksController < ApplicationController
     end
   end
 
-  # GET /personal_tasks/1
-  # GET /personal_tasks/1.json
-  def show
-    @personal_task = PersonalTask.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @personal_task }
-    end
-  end
-
   # GET /personal_tasks/new
   # GET /personal_tasks/new.json
   def new
@@ -44,7 +33,7 @@ class PersonalTasksController < ApplicationController
 
     respond_to do |format|
       if @personal_task.save
-        format.html { redirect_to @personal_task, notice: 'Personal Task was successfully created !!' }
+        format.html { redirect_to :action => "index", notice: 'Personal Task was successfully created !!' }
         format.json { render json: @personal_task, status: :created, location: @personal_task }
       else
         format.html { render action: "new" }
@@ -60,7 +49,7 @@ class PersonalTasksController < ApplicationController
 
     respond_to do |format|
       if @personal_task.update_attributes(params[:personal_task])
-        format.html { redirect_to @personal_task, notice: 'Personal task was successfully updated !!' }
+        format.html { redirect_to :action => "index", notice: 'Personal task was successfully updated !!' }
         format.json { head :ok }
       else
         format.html { render action: "edit" }
