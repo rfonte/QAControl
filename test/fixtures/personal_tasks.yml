@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  task: MyString
+  label: MyString
+  status: MyString
+
+two:
+  task: MyString
+  label: MyString
+  status: MyString

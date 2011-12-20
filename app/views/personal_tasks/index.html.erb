@@ -1,0 +1,28 @@
+<h1>Listing personal_tasks</h1>
+
+<table>
+  <tr>
+    <th>Task</th>
+    <th>Label</th>
+    <th>Status</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @personal_tasks.each do |personal_task| %>
+  <tr>
+    <td><%= personal_task.task %></td>
+    <td><%= personal_task.label %></td>
+    <td><%= personal_task.status %></td>
+    <td><%= link_to 'Edit', edit_personal_task_path(personal_task) %></td>
+    <td><%= link_to 'Destroy', personal_task, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Personal task', new_personal_task_path %>
+<%= link_to 'User Panel', user_panel_path %>
+
