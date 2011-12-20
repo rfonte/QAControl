@@ -1,2 +1,0 @@
-class UserPanelController < ApplicationController
-end
